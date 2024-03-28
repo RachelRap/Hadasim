@@ -1,0 +1,58 @@
+body {
+    overflow-y: scroll; /* יכול להיות גם auto או hidden, זה מוסתר */
+    scroll-behavior: smooth; /* גלילה חלקה */
+}
+
+
+.background-container {
+    
+    width: 100%;
+    height: 100vh;
+   
+  }
+  
+  .background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('./images.jpg'); /* שנה לנתיב הנכון של תמונת הרקע */
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+    overflow: hidden
+  }
+  
+  .arrow-container {
+    position: absolute;
+    top: 60%; /* מיקום החץ מהתחתית של התמונה */
+    left: 50%; /* מיקום החץ מהשמאל של התמונה */
+    transform: translateX(-50%); /* להזיז את החץ למרכז התמונה */
+    animation: moveUpDown 2s ease infinite; /* הוספת אנימציה לתנועה מעלה ומטה */
+    background-color: transparent; /* צבע רקע שקוף */
+    border: none;
+  }
+  .transparent-button:active {
+    border: none;
+  }
+  
+  .arrow {
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+   
+  }
+  
+  @keyframes moveUpDown {
+    0%, 100% {
+      transform: translateY(-20px); /* החץ במיקום התחלתי */
+    }
+    50% {
+      transform: translateY(20px); /* החץ במיקום סופי */
+    }
+  }
+  
